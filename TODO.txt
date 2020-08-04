@@ -1,13 +1,11 @@
-Pull in helpful steps for the guys from Christian's boilerplate
-Bug Helen for Selectors on site
+Build out helpful boilerplate commands and document them!
+Bug Helen for Selectors on site - in progress
 Map out happy path with Helen
 Fetch (js) or Axios(node) for HTTP calls (can translate from POSTMAN)
 
 Put in steps for resizing of window to mobile versions
 Check through customCommands for usefulness
 
-
-dotenv (improvement)
 Reports will fill up everytime you run the testing - ensure that you either clean this regularly or we can plan a garbage collection
 
 add "yarn start &&" to local_test
