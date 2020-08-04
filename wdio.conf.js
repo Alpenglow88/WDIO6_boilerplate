@@ -1,17 +1,15 @@
+// THIS FILE MUST REMAIN ES5 MNOT ES6 AS THIS IS WHERE BABEL IS CALLED
+
 // WORKING UTILITIES
 const getEnvVar = require("./utils/env");
 const { generate } = require("multiple-cucumber-html-reporter");
 const { removeSync, ensureDir } = require("fs-extra");
 
 const multipleCucumberHtmlReporter = require("wdio-multiple-cucumber-html-reporter");
-const cucumberJson = require('wdio-cucumberjs-json-reporter');
-
-// STORES
-const dataStore = require("./features/stores/dataStore");
+const cucumberJson = require("wdio-cucumberjs-json-reporter");
 
 //HELPERS
 const reportDate = require("./features/helpers/reportDate.helper.js");
-const customCommands = require("./utils/customCommands");
 
 // ------------------------------------------------------------------------
 
@@ -181,6 +179,7 @@ exports.config = {
     timeout: 60000,
     // <boolean> Enable this config to treat undefined definitions as warnings.
     ignoreUndefinedDefinitions: false,
+    requireModule: ["@babel/register"],
   },
 
   //
@@ -202,8 +201,7 @@ exports.config = {
     // Remove the `.tmp/` folder that holds the json and report files
     removeSync(".tmp/");
     removeSync("./reports/screenshots");
-    ensureDir("./reports/screenshots")
- 
+    ensureDir("./reports/screenshots");
   },
   /**
    * Gets executed before a worker process is spawned and can be used to initialise specific service
@@ -237,8 +235,6 @@ exports.config = {
     global.expect = chai.expect;
     global.assert = chai.assert;
     global.should = chai.should();
-
-    // customCommands.create();
   },
   /**
    * Runs before a WebdriverIO command gets executed.
@@ -267,9 +263,15 @@ exports.config = {
    */
   // afterStep: function ({ uri, feature, step }, context, { error, result, duration, passed, retries }) {
   // },
-  afterStep: function ({ uri, feature, step }, context, { error, result, duration, passed, retries }) {
+  afterStep: function (
+    { uri, feature, step },
+    context,
+    { error, result, duration, passed, retries }
+  ) {
     if (passed === false) {
-      browser.saveScreenshot(`reports/screenshots/${step.feature.name}_${step.scenario.name}.png`);
+      browser.saveScreenshot(
+        `reports/screenshots/${step.feature.name}_${step.scenario.name}.png`
+      );
     }
   },
 

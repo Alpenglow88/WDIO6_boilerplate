@@ -1,12 +1,13 @@
-const { Given, When, Then } = require("cucumber");
-const getEnvVar = require("../../utils/env.js");
-const { dataStore } = require("../stores/dataStore");
+import {Given, When, Then} from "cucumber";
+import getEnvVar from "../../utils/env.js";
+import {dataStore} from "../stores/dataStore";
+
 // const axios = require('axios').default;
 // const request = require("request");
 
-const SigninPage = require("../pageobjects/signin.page.js");
+import SigninPage from "../pageobjects/signin.page.js";
 
-const ValidVoucherGenerator = require("../helpers/validVoucherGenerator.helper.js");
+import ValidVoucherGenerator from "../helpers/validVoucherGenerator.helper.js";
 
 Given(/^I navigate to the Signin page$/, () => {
   SigninPage.open();
@@ -19,7 +20,7 @@ When(/^A valid voucher is generated$/, () => {
   // title = JSON.parse(validVoucher)
   return request(
     "https://ghibliapi.herokuapp.com/films/58611129-2dbc-4a81-a72f-77ddfc1b1b49",
-    function (error, response, body) {
+    (error, response, body) => {
       //   console.error('error:', error); // Print the error if one occurred
       //   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
       //   console.log('body:', body); // Print the HTML for the Google homepage.

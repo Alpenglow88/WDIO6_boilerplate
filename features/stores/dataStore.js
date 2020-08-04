@@ -21,4 +21,4 @@ const dataStore = {
   },
 };
 
-module.exports = dataStore;
+export default dataStore;

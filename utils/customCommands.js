@@ -3,14 +3,11 @@
 // WILL NOT WORK FOR THIS TOOL.
 // THIS IS HIGH ON THE TODO LIST!
 
-module.exports = {
+export default {
   create: () => {
     const defaultWait = 750;
     const defaultTimeout = 30000;
     const maxRetries = 3;
-
-
-
     
     browser.addCommand('resize', size => {
       switch (size) {

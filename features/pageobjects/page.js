@@ -1,5 +1,4 @@
-  
-module.exports = class Page {
+export default class Page {
   constructor() {}
 
   open(path) {

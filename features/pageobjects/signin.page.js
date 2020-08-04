@@ -2,7 +2,7 @@
 // using '/<url_path>' will apphend to the Base URL
 const Url = "";
 
-const Page = require("./page.js");
+import Page from "./page.js";
 
 class SigninPage extends Page {
   get pageTitleText() {
@@ -33,4 +33,4 @@ class SigninPage extends Page {
     super.open(`${Url}`);
   }
 }
-module.exports = new SigninPage();
+export default new SigninPage();

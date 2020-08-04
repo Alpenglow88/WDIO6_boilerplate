@@ -12,6 +12,4 @@ Reports will fill up everytime you run the testing - ensure that you either clea
 
 add "yarn start &&" to local_test
 
-Look at https://github.com/lebab/lebab for ES6 transpiling and install Babel to transpile to ES5?
-
 Look at resizing

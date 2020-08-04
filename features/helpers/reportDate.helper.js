@@ -1,3 +1,6 @@
+// THIS FILE MUST REMAIN ES5 MNOT ES6 AS THIS IS LOADED INTO
+// THE WDIO.CONFIG WHICH IS WHERE BABEL IS CALLED
+
 class reportDate {
   reportDate() {
     const date = new Date();
