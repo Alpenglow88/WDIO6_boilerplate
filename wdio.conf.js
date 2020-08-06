@@ -1,14 +1,8 @@
 // THIS FILE MUST REMAIN ES5 NOT ES6 AS THIS IS WHERE BABEL IS CALLED
 
-// WORKING UTILITIES
 const getEnvVar = require("./utils/env");
 const { generate } = require("multiple-cucumber-html-reporter");
 const { removeSync, ensureDir } = require("fs-extra");
-
-const multipleCucumberHtmlReporter = require("wdio-multiple-cucumber-html-reporter");
-const cucumberJson = require("wdio-cucumberjs-json-reporter");
-
-//HELPERS
 const reportDate = require("./features/helpers/reportDate.helper.js");
 
 // ------------------------------------------------------------------------
@@ -60,11 +54,12 @@ exports.config = {
   //
   capabilities: [
     {
+      maxInstances: 5,
       browserName: "chrome",
       "goog:chromeOptions": {
         args: [
           "--disable-infobars",
-          // "--headless",
+          "--headless",
           // '--no-sandbox',
           "--disable-gpu",
         ],
@@ -79,6 +74,7 @@ exports.config = {
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
   logLevel: "error",
+  // outputDir: "./logs",
   //
   // Set specific log levels per logger
   // loggers:
@@ -274,7 +270,6 @@ exports.config = {
       );
     }
   },
-
   /**
    * Runs after a Cucumber scenario
    */

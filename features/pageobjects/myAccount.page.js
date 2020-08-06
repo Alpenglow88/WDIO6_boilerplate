@@ -4,7 +4,7 @@ const Url = "";
 
 import Page from "./page.js";
 
-class SigninPage extends Page {
+class MyAccountPage extends Page {
   get pageTitleText() {
     return $('[class="mb-3"]');
   }
@@ -22,7 +22,9 @@ class SigninPage extends Page {
   }
 
   get signinOptions() {
-    return $$('[data-testid="SignInButtons_WRAPPER"] [class="btn btn-primary"]');
+    return $$(
+      '[data-testid="SignInButtons_WRAPPER"] [class="btn btn-primary"]'
+    );
   }
 
   get signinSwitch() {
@@ -33,4 +35,4 @@ class SigninPage extends Page {
     super.open(`${Url}`);
   }
 }
-export default new SigninPage();
+export default new MyAccountPage();
