@@ -14,7 +14,9 @@ Simulado for mocking?
 
 Add username and password into env file
 
+ESLint
 
+Husky
 
 
 

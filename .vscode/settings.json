@@ -1,0 +1,24 @@
+{
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#f29b30",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#c2fccf",
+        "activityBarBadge.foreground": "#15202b",
+        "titleBar.activeBackground":"#f29b30",
+        "titleBar.inactiveBackground": "#f29b30",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveForeground": "#15202b99",
+        "statusBar.background": "#f29b30",
+        "statusBarItem.hoverBackground": "#ea3e0d",
+        "statusBar.foreground": "#15202b"
+    }
+}
