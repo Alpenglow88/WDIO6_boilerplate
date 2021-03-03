@@ -1,7 +1,7 @@
 {
-  "name": "mvr_wdio",
+  "name": "wdio_6",
   "version": "1.0.0",
-  "description": "WDIO 6 with Cucumber and HTML reporting for MVR",
+  "description": "WDIO 6 with Cucumber and HTML reporting",
   "scripts": {
     "local_test": "MVR_ENV=local npx wdio wdio.conf.js --cucumberOpts.tagExpression=''",
     "dev_test": "MVR_ENV=dev npx wdio wdio.conf.js --cucumberOpts.tagExpression=''",
@@ -14,6 +14,7 @@
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.0",
+    "@babel/plugin-proposal-export-default-from": "^7.12.13",
     "@babel/preset-env": "^7.11.0",
     "@babel/register": "^7.10.5",
     "@wdio/allure-reporter": "^6.3.6",

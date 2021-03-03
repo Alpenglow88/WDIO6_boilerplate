@@ -1,35 +1,9 @@
 Build out helpful boilerplate commands and document them!
-Bug Helen for Selectors on site - in progress
-Map out happy path with Helen and then speak to other for other paths
 
 Add any useful customCommands
 
 Reports will fill up everytime you run the testing - ensure that you either clean this regularly or we can plan a garbage collection
 
-add "yarn start &&" to local_test
-
-Look at resizing
-
-Simulado for mocking?
-
-Add username and password into env file
-
 ESLint
 
 Husky
-
-
-
-
-Some things are in ES6 and some are in ES5 - this is because of where babel is called (wdio.config)
-This is the same babel config as in their repo though so this should work fine in the repo
-
-npm run scripts:
-    "e2e_tests" (run against dev once it has been pushed)
-    Circle runs - localhost builds
-
-
-We can split the steps into whatever format fits their needs (by feature, by GIVEN/WHEN/THEN etc)
-
-
-make sure to include wdio api link for guys to use

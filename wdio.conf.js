@@ -59,9 +59,11 @@ exports.config = {
       "goog:chromeOptions": {
         args: [
           "--disable-infobars",
-          "--headless",
-          // '--no-sandbox',
+            "--headless",
           "--disable-gpu",
+          "--no-sandbox",
+          "--disable-notifications",
+          "--enable-automation",
         ],
       },
     },

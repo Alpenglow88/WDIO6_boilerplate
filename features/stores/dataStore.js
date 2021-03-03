@@ -1,41 +1,14 @@
 const dataStore = {
   dataStore: {
-    validVoucher: undefined,
-    nonValidVoucher: undefined,
-    signIn: undefined,
-    signUp: undefined
+    XXXX: undefined,
   },
 
-  set validVoucher(value) {
-    this.dataStore.validVoucher = value;
+  set XXXX(value) {
+    this.dataStore.XXXX = value;
   },
 
-  get validVoucher() {
-    return this.dataStore.validVoucher;
-  },
-
-  set nonValidVoucher(value) {
-    this.dataStore.nonValidVoucher = value;
-  },
-
-  get nonValidVoucher() {
-    return this.dataStore.nonValidVoucher;
-  },
-
-  set signIn(value) {
-    this.dataStore.signIn = value;
-  },
-
-  get signIn() {
-    return this.dataStore.signIn;
-  },
-
-  set signUp(value) {
-    this.dataStore.signUp = value;
-  },
-
-  get signUp() {
-    return this.dataStore.signUp;
+  get XXXX() {
+    return this.dataStore.XXXX;
   },
 };
 

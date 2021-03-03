@@ -25,7 +25,7 @@ The main setup config file is the [wdio.config.js](wdio.conf.js) which sets out 
 
 Following the Gherkin syntax, the [features](./features) directory contains the features and the step definitions, as well as the page objects themselves.
 
-The [utils folder](utils/) contains the environment file (for setting the test environment - URLs, username etc used in the E2E tests) as well as a custom commands file for storing any frequently used command chains (or even things that are just helpful to be modularised)
+The [utils folder](utils/) contains the environment file (for setting the test environment - URLs, username etc used in the E2E tests - better SECRETS management is encouraged) as well as a custom commands file for storing any frequently used command chains (or even things that are just helpful to be modularised)
 
 ## **Running Tests**
 
@@ -41,7 +41,7 @@ In order to run tests against a local build (a feature branch you are working on
 
     yarn start //Open new terminal
 
-    yarn local_e2
+    yarn local_e2e
 
     OR
 
@@ -49,7 +49,7 @@ In order to run tests against a local build (a feature branch you are working on
 
 ### **Development testing**
 
-This will by default target the DEVELOPMENT Cloudfront URL (see [env file](./utils/env.js) for mapping)
+This will by default target the DEVELOPMENT URL (see [env file](./utils/env.js) for mapping)
 
     yarn dev_e2e
 
@@ -72,7 +72,7 @@ This will by default target the PRODUCTION URL (see [env file](./utils/env.js) f
 This framework uses several different reporting tools. These are for different reasons but because each tool is useful for different things. It also allows us to future proof to some degree.
 
 When the tests have been run you will see the spec reporter in the terminal (along with the dot reporter)
-These are both easy to read from the terminal and give a nice quick overview of the state of the testing. This can get unwieldy if the test suite grows too much but that is not a problem right now.
+These are both easy to read from the terminal and give a nice quick overview of the state of the testing. This can get unwieldy if the test suite grows too much.
 
 You will also see in the terminal, a link to an html generated report. This is a good way of visualising the state of the testing and can be handed to various other people including non-technical stakeholders.
 
@@ -86,7 +86,7 @@ Allure is another reporter that we can use. This is a bit more heavy weight and 
 
     npm run generate_e2e_allure_report
 
-This will spin up a java application from the generated files and automatically open it for viewing. This can be used in the future to push to an S3 bucket (or similar) that can be easily shared with technical and non-technical stakeholders as needed.
+This will spin up a Java application from the generated files and automatically open it for viewing. This can be used in the future to push to an S3 bucket (or similar) that can be easily shared with technical and non-technical stakeholders as needed.
 
 **NOTE**: The reports folder that is generated (but not Git tracked) will fill up with a report every time you run a test run. If you are running these a lot then remember to clean out the reports folder other wise you will fill up your local machine and run into problems.
 

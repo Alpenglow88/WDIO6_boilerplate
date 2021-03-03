@@ -11,13 +11,13 @@ const map = {
   },
 
   dev: {
-    host: "https://d3fy76nl7jc4sj.cloudfront.net/",
+    host: "",
     username: "",
     password: ""
   },
 
   prod: {
-    host: "https://myaccount.melodyvr.com/",
+    host: "",
     username: "",
     password: ""
   },
