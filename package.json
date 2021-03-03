@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "WDIO 6 with Cucumber and HTML reporting",
   "scripts": {
+    "local_test:default_cucumber": "MVR_ENV=local npx wdio wdio.conf.js",
     "local_test": "MVR_ENV=local npx wdio wdio.conf.js --cucumberOpts.tagExpression=''",
     "dev_test": "MVR_ENV=dev npx wdio wdio.conf.js --cucumberOpts.tagExpression=''",
     "prod_test": "MVR_ENV=prod npx wdio wdio.conf.js --cucumberOpts.tagExpression=''",
     "generate_allure_report": "allure generate --clean reports/allure-results/ --report-dir reports/allure-reports && allure open reports/allure-reports"
   },
   "keywords": [],
-  "author": "Ian Goddard",
+  "author": "Ian Goddard - https://github.com/Alpenglow88/WDIO6_boilerplate",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.10.5",
@@ -29,7 +30,6 @@
     "chromedriver": "^84.0.1",
     "fs-extra": "^9.0.1",
     "multiple-cucumber-html-reporter": "^1.18.0",
-    "request": "^2.88.2",
     "wdio-chromedriver-service": "^6.0.3",
     "wdio-cucumberjs-json-reporter": "^2.0.2",
     "wdio-multiple-cucumber-html-reporter": "^1.1.1"
