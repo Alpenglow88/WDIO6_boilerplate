@@ -4,6 +4,7 @@ const getEnvVar = require("./utils/env");
 const { generate } = require("multiple-cucumber-html-reporter");
 const { removeSync, ensureDir } = require("fs-extra");
 const reportDate = require("./features/helpers/reportDate.helper.js");
+const BrowserMocks = require("./utils/BrowserMocks");
 
 // ------------------------------------------------------------------------
 
@@ -59,7 +60,7 @@ exports.config = {
       "goog:chromeOptions": {
         args: [
           "--disable-infobars",
-            "--headless",
+          // "--headless",
           "--disable-gpu",
           "--no-sandbox",
           "--disable-notifications",
@@ -277,6 +278,14 @@ exports.config = {
    */
   // afterScenario: function (uri, feature, scenario, result, sourceLocation, context) {
   // },
+  afterScenario: function () {
+    BrowserMocks.restoreAllMocks();
+
+    // Clear anything we are storing so have a clean slate for every scenario
+    browser.execute(() => {
+      window.localStorage.clear();
+    });
+  },
   /**
    * Runs after a Cucumber feature
    */

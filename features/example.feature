@@ -18,3 +18,6 @@ Feature: Example Feature Title
       | First regex string  | 1             |
       | Second regex string | 2             |
       | Third regex string  | 3             |
+
+  Scenario: Mocked 400 response on Google - view in browser to verify
+    Then Example mocking 400 response

@@ -8,6 +8,8 @@ import getEnvVar from "../../utils/env.js";
 import { dataStore } from "../stores/dataStore";
 // Importing all relevant page objects in this fashion
 import MyNewPage from "../page_objects/myNewPage.page.js";
+// Import BrowserMocks for use in test steps
+import BrowserMocks from "../../utils/BrowserMocks";
 
 ///////////////////////
 // Test steps can be Given/When/Then as needed
@@ -49,7 +51,7 @@ Then(/^Example with pipe values (Pipe|AnotherPipe)$/, () => {
 // Example of a negative option test step - the negative step in this case is a helper function to check URL
 Then(/^I expect that the url is( not)* "([^"]*)?"$/, () => {
   // INSERT TEST CODE HERE
-})
+});
 
 // A useful example of using Axios for promise based HTTP calls
 When(
@@ -80,3 +82,20 @@ When(
     dataStore.validVoucher = validVoucherCode;
   }
 );
+
+Then(/^Example mocking 400 response$/, () => {
+  browser.url("http://www.google.com");
+  browser.pause(5000);
+  const apiMock = BrowserMocks.addMock("http://www.google.com");
+
+  apiMock.respond(
+    {
+      code: "ERR_GENERIC",
+      success: false,
+    },
+    { statusCode: 400 }
+  );
+
+  browser.url("http://www.google.com");
+  browser.pause(5000);
+});
